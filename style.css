@@ -1,0 +1,263 @@
+html,
+body {
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: flex;
+}
+
+.board {
+  position: relative;
+}
+#root {
+  margin: auto;
+}
+
+.heading {
+  font-weight: 900;
+  font-size: 80px;
+}
+
+#modeSelectionScreen {
+  text-align: center;
+}
+
+#selectPlayerScreen {
+  text-align: center;
+}
+
+#selectPlayerScreen h3 {
+  font-size: 30px;
+}
+#modeSelectionScreen h3 {
+  font-size: 30px;
+}
+
+#modeSelectionScreen .buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#modeSelectionScreen button {
+  margin: 0 50;
+  min-width: 220px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 14px 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #00a6ff;
+  font-size: 1.5rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 5px #afe9ff;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-appearance: none;
+  -moz-animation: none;
+}
+
+#modeSelectionScreen button:hover {
+  color: #006398;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #afe9ff;
+}
+
+#selectPlayerScreen .buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#selectPlayerScreen button {
+  margin: 0 50;
+  min-width: 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 14px 20px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #ffc43f;
+  font-size: 1.5rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 5px #afe9ff;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-appearance: none;
+  -moz-animation: none;
+}
+
+#selectPlayerScreen button:hover {
+  color: #fff;
+  border: 1px solid #006398;
+  box-shadow: 2px 2px 20px #afe9ff;
+}
+
+#gameView {
+  text-align: center;
+}
+
+#gameView h3 {
+  font-size: 30px;
+}
+
+#resultView {
+  text-align: center;
+}
+#resultView h3 {
+  font-size: 30px;
+}
+
+#gameView p,
+#resultView p {
+  margin: 1em 2em;
+}
+
+.cell {
+  display: inline-block;
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  overflow: hidden;
+  color: black;
+  font-size: 100px;
+  text-align: center;
+}
+
+.animate {
+  position: relative;
+  display: inline-block;
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  overflow: hidden;
+  color: black;
+  font-size: 100px;
+  text-align: center;
+  animation: slow 0.5s ease forwards;
+}
+
+@keyframes slow {
+  from {
+    font-size: 50px;
+  }
+  to {
+    font-size: 100px;
+  }
+}
+
+.symbolX {
+  color: slategrey;
+}
+
+.symbolO {
+  color: midnightblue;
+}
+
+#row0 .col0 {
+  border-top-left-radius: 10px;
+}
+#row0 .col2 {
+  border-top-right-radius: 10px;
+}
+#row2 .col0 {
+  border-bottom-left-radius: 10px;
+}
+#row2 .col2 {
+  border-bottom-right-radius: 10px;
+}
+
+.cell.winningLine {
+  color: green;
+}
+
+@media only screen and (max-width: 740px) {
+  #modeSelectionScreen button {
+    margin: 0 50;
+    min-width: 0px;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #modeSelectionScreen .buttonGroup {
+    flex-direction: column;
+  }
+
+  #modeSelectionScreen button {
+    margin-top: 30px;
+  }
+}
+
+.line {
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  width: 5px;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.horLine0 {
+  height: 450px;
+  transform: translate(14em, -4em) rotate(90deg);
+}
+
+.horLine1 {
+  height: 450px;
+  transform: translate(14em, 5.5em) rotate(90deg);
+}
+
+.horLine2 {
+  height: 450px;
+  transform: translate(14em, 15em) rotate(90deg);
+}
+
+.verLine0 {
+  height: 450px;
+  transform: translate(4.5em, 6.7em) rotate(0deg);
+}
+
+.verLine1 {
+  height: 450px;
+  transform: translate(13.9em, 6.7em) rotate(0deg);
+}
+
+.verLine2 {
+  height: 450px;
+  transform: translate(23.5em, 6.7em) rotate(0deg);
+}
+
+.diagLine1 {
+  height: 500px;
+  transform: translate(15em, 5em) rotate(-45deg);
+}
+
+.diagLine2 {
+  height: 550px;
+  transform: translate(14.5em, 3em) rotate(45deg);
+}
+
+/* .horLine1{
+  height: 500px;
+  transform: translate();
+} */
+
+/* .line {
+    height: 400px;
+    position: absolute;
+    background-color: red;
+    width: 10px;
+    z-index: 1;
+    transform: translate(5vw, 8vw) rotate(90deg);
+} */
